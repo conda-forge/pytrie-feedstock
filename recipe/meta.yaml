@@ -25,6 +25,7 @@ requirements:
 
   run:
     - python
+    - sortedcontainers
 
 test:
   imports:
