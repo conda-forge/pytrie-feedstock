@@ -1,36 +1,44 @@
-{%set name = "pytrie" %}
-{%set camelName = "PyTrie" %}
-{%set version = "0.2" %}
+{%set name = "PyTrie" %}
+{%set version = "0.3" %}
+{%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "b272021351efadc6757591aac03ed4794bdfd091122204a4673e94bfb66cc500" %}
+{%set hash_val = "0c1bd0cb7c301b193da4bcf31bdf68bbdbea88be4bea5f680caecc56d9b74020" %}
+{%set build_num = "0" %}
 
 package:
-  name: {{ name }}
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ camelName }}-{{ version }}.tar.gz
+  fn: {{ name }}-{{ version }}.{{ compress_type }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
   {{ hash_type }}: {{ hash_val }}
 
 build:
-  number: 0
+  number: {{ build_num }}
   script: python setup.py install
 
 requirements:
   build:
     - python
+    - setuptools
+    - sortedcontainers
 
   run:
     - python
+    - sortedcontainers
 
 test:
   imports:
-    - {{ name }}
+    - pytrie
+  
 about:
-  home: http://bitbucket.org/gsakkis/pytrie/
+  home: https://github.com/gsakkis/pytrie
   license: BSD 3-Clause
+  license_family: BSD
   summary: 'A pure Python implementation of the trie data structure.'
+  dev_url: https://github.com/gsakkis/pytrie
+  doc_url: https://pytrie.readthedocs.io/en/latest/
 
 extra:
   recipe-maintainers:
