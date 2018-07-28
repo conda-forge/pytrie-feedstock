@@ -1,8 +1,8 @@
 {%set name = "PyTrie" %}
-{%set version = "0.3" %}
+{% set version = "0.3.1" %}
 {%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "0c1bd0cb7c301b193da4bcf31bdf68bbdbea88be4bea5f680caecc56d9b74020" %}
+{% set hash_val = "3bb7d122a549d8006c9cba2feecac20bceda9f8c0e2a3fa99a5584cfe0dec523" %}
 {%set build_num = "0" %}
 
 package:
