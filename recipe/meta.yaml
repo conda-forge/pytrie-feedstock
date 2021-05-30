@@ -1,21 +1,18 @@
 {% set name = "PyTrie" %}
 {% set version = "0.4.0" %}
-{% set compress_type = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash_val = "8f4488f402d3465993fb6b6efa09866849ed8cda7903b50647b7d0342b805379" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
-  {{ hash_type }}: {{ hash_val }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 8f4488f402d3465993fb6b6efa09866849ed8cda7903b50647b7d0342b805379
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -29,6 +26,10 @@ requirements:
 test:
   imports:
     - pytrie
+  commands:
+    - pip check
+  requires: 
+    - pip
   
 about:
   home: https://github.com/gsakkis/pytrie
