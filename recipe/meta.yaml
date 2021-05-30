@@ -29,6 +29,10 @@ requirements:
 test:
   imports:
     - pytrie
+  commands:
+    - pip check
+  requires: 
+    - pip
   
 about:
   home: https://github.com/gsakkis/pytrie
