@@ -1,8 +1,8 @@
 {% set name = "PyTrie" %}
-{% set version = "0.3.1" %}
+{% set version = "0.4.0" %}
 {% set compress_type = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash_val = "3bb7d122a549d8006c9cba2feecac20bceda9f8c0e2a3fa99a5584cfe0dec523" %}
+{% set hash_val = "8f4488f402d3465993fb6b6efa09866849ed8cda7903b50647b7d0342b805379" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
   {{ hash_type }}: {{ hash_val }}
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
