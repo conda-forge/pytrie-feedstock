@@ -34,6 +34,7 @@ about:
   home: https://github.com/gsakkis/pytrie
   license: BSD 3-Clause
   license_family: BSD
+  license_file: LICENSE
   summary: 'A pure Python implementation of the trie data structure.'
   dev_url: https://github.com/gsakkis/pytrie
   doc_url: https://pytrie.readthedocs.io/en/latest/
